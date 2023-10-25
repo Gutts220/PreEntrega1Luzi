@@ -1,9 +1,13 @@
 import React from 'react'
+import { Badge } from '@chakra-ui/react'
 
-const cartWidget = () => {
+const CartWidget = () => {
   return (
-    <div>cartWidget</div>
+    <div>
+      Carrito 
+      <Badge colorScheme='orange'> 5 </Badge>
+    </div>
   )
 }
 
-export default cartWidget
+export default CartWidget
