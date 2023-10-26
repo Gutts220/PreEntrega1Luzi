@@ -13,32 +13,31 @@ import {
 
 const NavBar = () => {
   return (
-    <div>
+    <div >
       
-      <Flex>
+      <Flex bg='brand.400'>
 
-        <Box p='4' >
-          <h3>Brand</h3>
+        <Box p='4' bg="brand.300" >
+          <h3>Luzi Café</h3>
         </Box>
 
         <Spacer />
 
-        <Menu>
-          <MenuButton >
-            Actions
+        <Menu >
+          <MenuButton bg='brand.300' color='brand.100'>
+            Nuestros Productos
           </MenuButton>
-          <MenuList>
-            <MenuItem>Download</MenuItem>
-            <MenuItem>Create a Copy</MenuItem>
-            <MenuItem>Mark as Draft</MenuItem>
-            <MenuItem>Delete</MenuItem>
-            <MenuItem>Attend a Workshop</MenuItem>
+          <MenuList bg='brand.400' color='brand.100' >
+            <MenuItem bg='brand.300' color='brand.100'> Variedades de Cafes </MenuItem>
+            <MenuItem bg='brand.300' color='brand.100'> Cafeteras </MenuItem>
+            <MenuItem bg='brand.300' color='brand.100'> Accesorios de barista </MenuItem>
+            <MenuItem bg='brand.300' color='brand.100'> Infusiones </MenuItem>
           </MenuList>
         </Menu>
 
         <Spacer />
 
-        <Box p='4' >
+        <Box p='4' bg='brand.300' color='brand.100'>
           <CartWidget/>
         </Box>
 
