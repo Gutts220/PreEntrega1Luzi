@@ -4,6 +4,10 @@ import App from './App.jsx'
 import './index.css'
 import { ChakraBaseProvider, extendTheme } from '@chakra-ui/react'
 
+
+
+
+
 const colors={
   brand: {
     100: '#D9D4C7',
