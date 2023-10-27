@@ -24,8 +24,7 @@ const NavBar = () => {
 
     ':hover':{
       color:'brand.100',
-      w: "120px",
-      h: "60px",
+      fontSize: "15px"
     }
   }
 
