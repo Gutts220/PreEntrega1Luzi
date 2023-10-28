@@ -1,6 +1,6 @@
 import { Box, Flex, Image, SimpleGrid, Stack } from '@chakra-ui/react';
 import React from 'react';
-import { SiCoffeescript } from 'react-icons/Si'; // Asegúrate de que la importación sea en minúsculas 'si' en lugar de 'Si'
+import { SiCoffeescript } from 'react-icons/si'; 
 
 const ItemListContainer = ({ greeting }) => {
   return (
