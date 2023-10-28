@@ -1,13 +1,14 @@
 import { Box, Flex, Image, SimpleGrid, Stack } from '@chakra-ui/react';
 import React from 'react';
-import { SiCoffeescript } from 'react-icons/si'; 
+import { SiCoffeescript } from 'react-icons/si';
+import logo from  '../assets/imagenes/logo2.png'
 
 const ItemListContainer = ({ greeting }) => {
   return (
     <SimpleGrid columns={1} alignItems="center" justifyContent="center" height="500px" width="100%" >
       <Flex direction="column" alignItems="center" >
         <Box w="100%" p="5px">
-          <Image src="src/assets/imagenes/logo2.png" alt="Logo_tienda_de_cafe"  maxWidth= '100%' height= '300px' />
+          <Image src={logo} alt="Logo_tienda_de_cafe"  maxWidth= '100%' height= '300px' />
         </Box >
         <h1 value={{ style: { display: 'inline',  } }}  style={{ fontSize: '30px' }}>
           <SiCoffeescript style={{ display: 'inline', }}/> {greeting} <SiCoffeescript style={{ display: 'inline', }}/>
