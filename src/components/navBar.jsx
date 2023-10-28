@@ -1,6 +1,5 @@
 import React from 'react'
-import CartWidget from './cartWidget'
-import './NavBar.css'
+import CartWidget from './CartWidget'
 import {
   Menu,
   MenuButton,
@@ -36,7 +35,7 @@ const NavBar = () => {
       <Flex bg='brand.300' wrap="wrap">
 
         <Box  fontSize="40px" color='brand.500' textAlign= "center" h="50px" m="10px" w="300px" borderRadius="60% / 40%" px="10px">
-          <h1 >Luzi Café</h1>
+          <h1 > Café Luzi </h1>
         </Box>
 
         <Spacer />
@@ -56,7 +55,7 @@ const NavBar = () => {
 
         <Spacer />
 
-        <Box p='4'color='brand.500'  w="70px" h="50px" m="10px">
+        <Box p='4'color='brand.500'  w="70px" h="50px" m="10px" display="flex"alignItems="center">
           <CartWidget/>
         </Box>
         </HStack>
