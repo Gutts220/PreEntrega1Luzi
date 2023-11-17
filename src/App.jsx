@@ -4,7 +4,7 @@ import ItemListContainer from './components/ItemListContainer'
 import { Flex } from '@chakra-ui/react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import  Home  from './components/Home.jsx'
-import  About  from './components/about.jsx'
+import  About  from './components/about'
 import Cart from './components/Cart.jsx'
 import ProductDetail from './components/ProductDetail.jsx'
 
