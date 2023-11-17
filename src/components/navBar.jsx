@@ -11,7 +11,7 @@ import {
   Spacer,
   HStack
 } from '@chakra-ui/react'
-import About from './about'
+import About from './About.jsx'
 
 
 const NavBar = () => {
