@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import CartWidget from './CartWidget'
 import {
   Menu,
@@ -34,8 +35,11 @@ const NavBar = () => {
       
       <Flex bg='brand.300' wrap="wrap">
 
-        <Box  fontSize="40px" color='brand.500' textAlign= "center" h="50px" m="10px" w="300px" borderRadius="60% / 40%" px="10px">
-          <h1 > Café Luzi </h1>
+        <Box  fontSize="40px" color='brand.500' textAlign= "center" h="50px" m="10px" w="300px" borderRadius="60% / 40%" px="10px" >
+          <Link to={'/'}>
+            <h1 > Café Luzi </h1>
+          </Link>
+          
         </Box>
 
         <Spacer />
@@ -46,17 +50,20 @@ const NavBar = () => {
             Nuestros Productos
           </MenuButton>
           <MenuList bg='brand.400' color='brand.500' >
-            <MenuItem bg='brand.300' color='brand.500'> Variedades de Cafes </MenuItem>
-            <MenuItem bg='brand.300' color='brand.500'> Cafeteras </MenuItem>
-            <MenuItem bg='brand.300' color='brand.500'> Accesorios de barista </MenuItem>
-            <MenuItem bg='brand.300' color='brand.500'> Infusiones </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > Variedades de Cafes </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > Cafeteras </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > Accesorios de barista </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > Infusiones </MenuItem>
           </MenuList>
         </Menu>
 
         <Spacer />
 
         <Box p='4'color='brand.500'  w="70px" h="50px" m="10px" display="flex"alignItems="center">
-          <CartWidget/>
+          <Link to={'/Cart'}>
+            <CartWidget/>
+          </Link>
+          
         </Box>
         </HStack>
         
