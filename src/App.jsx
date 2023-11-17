@@ -1,12 +1,12 @@
 
-import NavBar from './components/navBar'
-import ItemListContainer from './components/ItemListContainer'
+import NavBar from './components/NavBar.jsx'
+import ItemListContainer from './components/ItemListContainer.jsx'
 import { Flex } from '@chakra-ui/react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import  Home  from './components/home'
-import  About  from './components/about'
-
-import Cart from './components/Cart'
+import  Home  from './components/Home.jsx'
+import  About  from './components/about.jsx'
+import Cart from './components/Cart.jsx'
+import ProductDetail from './components/ProductDetail.jsx'
 
 
 const App = () => {
@@ -35,14 +35,16 @@ const App = () => {
            <Route exact path='/' element={<Home/>}/>
            <Route exact path='/about' element={<About/>}/>
            <Route exact path='/Cart' element={<Cart/>}/>
+           <Route exact path='/producto/:id' element={<ProductDetail/>}/>
+           <Route exact path='/producto/:categoria' element={<ItemListContainer/>}/>
         </Routes>
       </BrowserRouter>
       
       
     </div>
-    <Flex bg='brand.100' p="20px" m="50px" alignItems="center">
+    {/* <Flex bg='brand.100' p="20px" m="50px" alignItems="center">
       <ItemListContainer  greeting={"  ¡Bienvenido a la acogedora tienda de café!"} />
-    </Flex>
+    </Flex> */}
 
     
     </>

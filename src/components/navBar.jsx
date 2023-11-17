@@ -11,6 +11,7 @@ import {
   Spacer,
   HStack
 } from '@chakra-ui/react'
+import About from './about'
 
 
 const NavBar = () => {
@@ -45,6 +46,11 @@ const NavBar = () => {
         <Spacer />
 
         <HStack>
+        <Link to={'/About'}>
+          <About/>
+        </Link>
+
+
         <Menu >
           <MenuButton  color='brand.500' sx={navStyle} borderRadius="30% / 100%" >
             Nuestros Productos
