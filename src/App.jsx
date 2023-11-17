@@ -1,5 +1,5 @@
 
-import NavBar from './components/NavBar.jsx'
+import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import { Flex } from '@chakra-ui/react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
