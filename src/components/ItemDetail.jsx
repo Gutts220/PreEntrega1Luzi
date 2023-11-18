@@ -5,37 +5,36 @@ import ItemCount from './ItemCount';
 
 
 const ItemDetail = ({productos}) => {
-
+ 
   const { id } = useParams();
-
-  const filteredProducts = productos.filter((producto)=> producto.id === id)
-
+  
+  const  p= productos.find((producto)=> producto.id === Number(id))
+ 
   return (
     <>
-    { filteredProducts.map((p)=>{
-        return(
-          <Center p='1rem'>
-            <Card>
-              <CardHeader>
-                <Heading>
-                  {p.name}
-                </Heading>
-              </CardHeader>
-              <CardBody>
-                <Text>{p.description}</Text>
-                <Text>{p.Category}</Text>
-              </CardBody>
-              <CardFooter>
-                <ItemCount/>
-              </CardFooter> 
+          <div key={p.id}>
+            <Center p='1rem'>
+              <Card bg='brand.300'>
+                <CardHeader>
+                  <Heading>
+                    {p.name}
+                  </Heading>
+                </CardHeader>
+                <CardBody>
+                  <Text>{p.description}</Text>
+                  <Text>{p.category}</Text>
+                </CardBody>
+                 <CardFooter ml="35px">
+                  <ItemCount />
+                </CardFooter>  
 
-            </Card>
-          </Center>
-        )
-      
-      })
-    }
+              </Card>
+            </Center>
+          </div>
+          
+        
     
+  
     
     </>
   )
