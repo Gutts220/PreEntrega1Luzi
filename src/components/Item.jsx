@@ -1,12 +1,30 @@
 import React from 'react'
+import { Card, CardHeader, CardBody, Heading, Text, Button, CardFooter } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
-const Item = ({title, price, image}) => {
+const Item = ({name, description, id, category}) => {
   return (
-    <div>
-        <h1>Producto: {title}</h1>
-        <p>${price}</p>
-        <img src={image} alt={title} />
-    </div>
+    <> 
+      <Card>
+        <CardHeader>
+          <Heading size="md">{name}</Heading>
+        </CardHeader>
+
+        <CardBody>
+          <Text>{description}</Text>
+          <Text>{category}</Text>
+        </CardBody>
+
+        <CardFooter>
+          <Button>
+            <Link to={`/item/${id}`}> 
+              Details 
+            </Link>
+          </Button>
+        </CardFooter>
+      </Card>
+        
+    </>
   )
 }
 

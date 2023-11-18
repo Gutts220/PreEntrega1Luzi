@@ -1,34 +1,41 @@
 import React from 'react'
-import {useEffect, useState} from 'react'
-import Item from './components/Item'
+import ItemDetail from './ItemDetail'
+
 
 const ItemDetailContainer = () => {
 
-  const getProducts = async() =>{
-    const response = await fetch('https://fakestoreapi.com/products');
-    const data = await response.json();
-    return data 
-  }
   
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    getProducts().then((product) => setProducts(product))
-  }, [])
-
+  const productos = [
+    {id: 1 , name: "Producto A", description: "Descripcion del producto A", price:1000 , category:  "cat1"},
+    {id: 2 , name: "Producto B", description: "Descripcion del producto B", price: 1500, category: "cat2"}, 
+    {id: 3 , name: "Producto C", description: "Descripcion del producto C", price: 2000 , category: "cat3"},
+    {id: 4 , name: "Producto D", description: "Descripcion del producto D", price: 2500, category: "cat4"},
+  ]
+  
+  const getProductos= new Promise((resolve,reject) =>{
+    if(Productos.lenght>0){
+      setTimeout(() =>{
+        resolve(Productos)
+      },2000)
+    } else {
+      reject(new Error('No hay datos'))
+    }
+  })
+  
+  getProductos
+      .then((res)=>{})
+      .catch((err)=>{
+        console.log(err)
+      })
+  
 
   return (
-    <>
-      {
-        products.map((prod)=>{
-          return(<Item
-            key = {prod.id}
-            price={prod.price}
-            title={prod.title}
-            image={prod.image}
-          />)
-        })
-      }
+    <>  
+      <ItemDetail
+         productos={productos}
+      />
     </>
+    
     
   )
 }

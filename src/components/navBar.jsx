@@ -56,10 +56,10 @@ const NavBar = () => {
             Nuestros Productos
           </MenuButton>
           <MenuList bg='brand.400' color='brand.500' >
-            <MenuItem bg='brand.300' color='brand.500' > Variedades de Cafes </MenuItem>
-            <MenuItem bg='brand.300' color='brand.500' > Cafeteras </MenuItem>
-            <MenuItem bg='brand.300' color='brand.500' > Accesorios de barista </MenuItem>
-            <MenuItem bg='brand.300' color='brand.500' > Infusiones </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'cat1'}`}> Variedades de Cafes </Link>  </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'cat2'}`}> Cafeteras </Link> </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'cat3'}`}> Accesorios de barista </Link> </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'cat4'}`}> Infusiones </Link> </MenuItem>
           </MenuList>
         </Menu>
 
