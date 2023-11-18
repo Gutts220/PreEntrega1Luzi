@@ -6,14 +6,14 @@ const ItemListContainer = () => {
   const { category } = useParams();
 
   const productos = [
-    {id: 1 , name: "Producto A", description: "Descripcion del producto A", stock: 1, category:  "variedades de cafe"},
-    {id: 2 , name: "Producto B", description: "Descripcion del producto B", stock: 15, category: "cafeteras"}, 
-    {id: 3 , name: "Producto C", description: "Descripcion del producto C", stock: 20, category: "accesorios de barista"},
-    {id: 4 , name: "Producto D", description: "Descripcion del producto D", stock: 25, category: "infusiones"},
-    {id: 5 , name: "Producto E", description: "Descripcion del producto E", stock: 25, category: "accesorios de barista"},
-    {id: 6 , name: "Producto F", description: "Descripcion del producto F", stock: 25, category: "cafeteras"},
-    {id: 7 , name: "Producto G", description: "Descripcion del producto G", stock: 25, category: "infusiones"},
-    {id: 8 , name: "Producto H", description: "Descripcion del producto H", stock: 10, category:  "variedades de cafe"},
+    {id: 1 , name: "Cafe de Colombia", description: "Descripcion del producto ", stock: 1, category:  "variedades de cafe"},
+    {id: 2 , name: "Cafetera Italiana", description: "Descripcion del producto ", stock: 15, category: "cafeteras"}, 
+    {id: 3 , name: "Coladores", description: "Descripcion del producto ", stock: 20, category: "accesorios de barista"},
+    {id: 4 , name: "Te Earl Grey", description: "Descripcion del producto ", stock: 25, category: "infusiones"},
+    {id: 5 , name: "Delantal", description: "Descripcion del producto ", stock: 25, category: "accesorios de barista"},
+    {id: 6 , name: "Cafetera Francesa", description: "Descripcion del producto ", stock: 25, category: "cafeteras"},
+    {id: 7 , name: "Te English Breakfast", description: "Descripcion del producto ", stock: 25, category: "infusiones"},
+    {id: 8 , name: "Cafe de Nicaragüa", description: "Descripcion del producto ", stock: 10, category:  "variedades de cafe"},
   ]
 
   const getProductos = new Promise((resolve, reject) => {
