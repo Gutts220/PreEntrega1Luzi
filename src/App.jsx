@@ -6,6 +6,7 @@ import  Home  from './components/Home.jsx'
 import  About  from './components/About'
 import Cart from './components/Cart.jsx'
 import ItemDetailContainer from './components/ItemDetailContainer.jsx'
+import { CartProvider } from './context/CartContext.jsx'
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <>
+    <CartProvider>
     <div>
       <BrowserRouter>
         <NavBar bg='brand.500'/>
@@ -25,9 +27,8 @@ const App = () => {
            <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
         </Routes>
       </BrowserRouter>
-      
-      
     </div>
+    </CartProvider>
     </>
       
   )

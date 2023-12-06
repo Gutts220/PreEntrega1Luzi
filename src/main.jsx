@@ -8,6 +8,7 @@ import { ChakraBaseProvider, extendTheme } from '@chakra-ui/react'
 
 
 
+
 const colors={
   brand: {
     100: '#D9D4C7',
@@ -30,9 +31,9 @@ const theme = extendTheme({colors})
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
+ 
     <ChakraBaseProvider theme={theme}>
-      <App />
+            <App />
     </ChakraBaseProvider>
-  // </React.StrictMode>,
+ 
 )

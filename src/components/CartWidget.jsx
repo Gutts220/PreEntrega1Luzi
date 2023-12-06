@@ -4,8 +4,15 @@ import { createTheme } from '@mui/material/styles';
 import { styled, ThemeProvider } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {CartContext} from '../context/CartContext'
+
 
 const theme = createTheme();
+
+const CartWidget = ()=> {
+  
+
+const { cantCart } = useContext(CartContext);
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -16,16 +23,17 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     padding: '0 4px',
   },
 }));
-// #BF7C41
-export default function CartWidget() {
+
+
+ 
   return (
     <ThemeProvider theme={theme}>
     <IconButton aria-label="cart">
-      <StyledBadge badgeContent={4} >
+      <StyledBadge badgeContent={cantCart} >
         <ShoppingCartIcon />
       </StyledBadge>
     </IconButton>
   </ThemeProvider>
   );
 }
-
+export default  CartWidget
