@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 const Cart = () => {
@@ -12,17 +12,17 @@ const Cart = () => {
   return (
     <>
       <h2>Carrito de Compras</h2>
-      {cart.map((item) => (
-        <div key={item.id}>
-          <p>{item.name}</p>
-          <p>Precio: {item.price}</p>
+      {cart.map((producto) => (
+        <div key={producto.id}>
+          <p>{producto.name}</p>
+          <p>Precio: {producto.price}</p>
           {/* <button onClick={() => removeFromCart(item.id)}>Eliminar</button> */}
         </div>
       ))}
       
 
       {  
-            Cart.length > 0 ?
+            cart.length > 0 ?
             <>
                 <h2>Precio total: ${getTotalPrice()}</h2>
                 <button onClick={handleVaciar}>Vaciar</button>
