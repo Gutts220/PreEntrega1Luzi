@@ -9,6 +9,8 @@ const ItemDetail = ({productos}) => {
   const { id } = useParams();
   
   const  p= productos.find((producto)=> producto.id === Number(id))
+
+  const { carrito, agregarAlCarrito } = useContext(CartContext);
  
   return (
     <>

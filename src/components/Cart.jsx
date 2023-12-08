@@ -1,29 +1,37 @@
 import React from 'react';
-import { useCart } from '../context/CartContext';
-
+import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 const Cart = () => {
-  const { cartItems, removeFromCart, getTotalPrice } = useCart();
-
-  if (cartItems.length === 0) {
-    return (
-      <div>
-        <p>No hay items en el carrito.</p>
-      </div>
-    );
+  const { cart, emptyTheCart, getTotalPrice } = useContext(CartContext);
+  
+  const handleVaciar = () => {
+    emptyTheCart();
   }
 
+
   return (
-    <div>
+    <>
       <h2>Carrito de Compras</h2>
-      {cartItems.map((item) => (
+      {cart.map((item) => (
         <div key={item.id}>
           <p>{item.name}</p>
           <p>Precio: {item.price}</p>
-          <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
+          {/* <button onClick={() => removeFromCart(item.id)}>Eliminar</button> */}
         </div>
       ))}
-      <p>Precio Total: {getTotalPrice()}</p>
-    </div>
+      
+
+      {  
+            Cart.length > 0 ?
+            <>
+                <h2>Precio total: ${getTotalPrice()}</h2>
+                <button onClick={handleVaciar}>Vaciar</button>
+                <Link to="/checkout">Finalizar compra</Link>
+            </> :
+            <h2>El carrito está vacío :(</h2>
+        }
+    </>
+
   );
 };
 

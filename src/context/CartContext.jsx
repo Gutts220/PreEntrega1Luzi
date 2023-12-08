@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState } from 'react';
 
 export const CartContext = createContext();
 
+const InicialCart = JSON.parse(localStorage.getItem("carrito")) || [];
+
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(InicialCart);
 
@@ -36,12 +38,12 @@ export const CartProvider = ({ children }) => {
 
   const getTotalPrice = () => {
     
-    return cartItems.reduce((total, item) => total + item.price* item.cant, 0);
+    return cart.reduce((total, item) => total + item.price* item.cant, 0);
   };
 
   return (
     <CartContext.Provider value={{ 
-      cartItems, 
+      cart, 
       addToCart, 
       emptyTheCart, 
       getTotalPrice, 
