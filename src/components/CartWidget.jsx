@@ -29,7 +29,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   return (
     <ThemeProvider theme={theme}>
     <IconButton aria-label="cart">
-      <StyledBadge badgeContent={cantCart} >
+      <StyledBadge badgeContent={cantCart()} >
         <ShoppingCartIcon />
       </StyledBadge>
     </IconButton>
