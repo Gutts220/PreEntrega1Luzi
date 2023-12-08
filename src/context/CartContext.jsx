@@ -21,7 +21,7 @@ export const CartProvider = ({ children }) => {
     
     } else {
       
-      newCart.push(addeditem);
+      newCart.push(addedItem);
     
     }
     setCart(newCart);
@@ -31,7 +31,7 @@ export const CartProvider = ({ children }) => {
     return cart.reduce((cantidad, item) => cantidad + item.cant, 0);
   }
 
-  const emptyTheCart = (itemId) => {
+  const emptyTheCart = () => {
     
     setCart([]);
   };

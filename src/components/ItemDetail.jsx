@@ -1,7 +1,9 @@
 import { Box, Card, CardBody, CardFooter, CardHeader, Center, Heading, Spacer, Text } from '@chakra-ui/react';
-import React from 'react'
+import React,{useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import ItemCount from './ItemCount';
+import useCounter from '../hooks/useCounter'
+import {CartContext} from '../context/CartContext'
 
 
 const ItemDetail = ({productos}) => {
@@ -10,7 +12,9 @@ const ItemDetail = ({productos}) => {
   
   const  p= productos.find((producto)=> producto.id === Number(id))
 
-  const { carrito, agregarAlCarrito } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
+
+  const{cant, increment, decrement }=useCounter(0,1)
  
   return (
     <>
@@ -33,7 +37,12 @@ const ItemDetail = ({productos}) => {
                   <Text>Hay diponibles {p.stock} unidades </Text>
                 </CardBody>
                  <CardFooter ml="35px">
-                  <ItemCount />
+                 <ItemCount
+                  add={() => { addToCart(p,cant) }}
+                  cant={cant} 
+                  increment={increment}
+                  decrement={decrement}
+                />
                 </CardFooter>  
 
               </Card>

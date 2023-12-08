@@ -1,17 +1,15 @@
 import React from 'react'
-import useCounter from '../hooks/useCounter'
 import { ButtonGroup, Center, Button } from '@chakra-ui/react'
-const ItemCount = () => {
+const ItemCount = ({ add,cant, increment, decrement}) => {
   
-  const{ count, increment, decrement}=useCounter(0,1)
-  
-    return (
+  return (
     <>
       <Center>
         <ButtonGroup >
           <Button onClick={decrement} bg='brand.200' >-</Button>
-          <Button bg='brand.200'>{count}</Button>
+          <Button bg='brand.200'>{cant}</Button>
           <Button onClick={increment} bg='brand.200'>+</Button>
+          <button className="agregar-al-carrito" onClick={add}>Agregar al Carrito</button>
         </ButtonGroup>
       </Center>
       
