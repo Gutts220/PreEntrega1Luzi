@@ -6,11 +6,8 @@ import useCounter from '../hooks/useCounter'
 import {CartContext} from '../context/CartContext'
 
 
-const ItemDetail = ({productos}) => {
- 
-  const { id } = useParams();
-  
-  const  p= productos.find((producto)=> producto.id === Number(id))
+const ItemDetail = ({product}) => {
+
 
   const { addToCart } = useContext(CartContext);
 
@@ -18,27 +15,27 @@ const ItemDetail = ({productos}) => {
  
   return (
     <>
-          <div key={p.id}>
+          <div key={product.id}>
             <Center p='1rem'>
               <Card bg='brand.300'>
                 <CardHeader>
-                 <Text>{p.category}</Text>
+                 <Text>{product.category}</Text>
                  <Box fontSize="30px">
                   <h1>
-                    {p.name}
+                    {product.name}
                   </h1>
 
                  </Box>
                   
                 </CardHeader>
                 <CardBody>
-                  <Text>{p.description}</Text>
+                  <Text>{product.description}</Text>
                   <Spacer/>
-                  <Text>Hay diponibles {p.stock} unidades </Text>
+                  <Text>Hay diponibles {product.stock} unidades </Text>
                 </CardBody>
                  <CardFooter ml="35px">
                  <ItemCount
-                  add={() => { addToCart(p,cant) }}
+                  add={() => { addToCart(product,cant) }}
                   cant={cant} 
                   increment={increment}
                   decrement={decrement}

@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import {dataBase} from '../firebase/config';
 
 const ItemListContainer = () => {
 
   const [products, setProducts] = useState([]);
 
-  const [name, setName] = useState("Products")
-
   const category = useParams().category
 
   useEffect(() => {
 
     const prodRef = collection (dataBase, "infusiones");
+
+    // const q = category ? query(prodRef, where("category", "==", category)) : prodRef;
+
+    // const q =  query(prodRef, where("category", "==", category))
 
     getDocs(prodRef)
       .then((resp)=> {
