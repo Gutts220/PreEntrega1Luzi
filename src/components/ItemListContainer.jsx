@@ -29,13 +29,13 @@ const ItemListContainer = () => {
 
   }, [category])
   
-  const filteredProducts = products.filter((products)=>products.category === category)
-  console.log(filteredProducts)
+  // const filteredProducts = products.filter((products)=>products.category === category)
+  // console.log(filteredProducts)
    
 
   return (
     <>
-      <ItemList productos={filteredProducts} />
+      <ItemList productos={products} />
     </>
   );
 };
