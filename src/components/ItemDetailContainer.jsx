@@ -11,11 +11,11 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
 
-    const docRef = doc(dataBase, "Infusiones", id);
-
+    const docRef = doc(dataBase, "productos", id);
+    console.log(docRef)
     getDoc(docRef)
       .then((resp)=> {
-        console.log(resp.id);
+        // console.log(resp.id);
         setProduct(
           {...resp.data(), id: resp.id}
         );

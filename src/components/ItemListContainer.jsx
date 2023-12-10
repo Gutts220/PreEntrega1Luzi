@@ -9,16 +9,17 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   const category = useParams().category
+  console.log(category)
 
   useEffect(() => {
 
-    const prodRef = collection (dataBase, "infusiones");
+    const prodRef = collection (dataBase, "productos");
 
     // const q = category ? query(prodRef, where("category", "==", category)) : prodRef;
 
-    // const q =  query(prodRef, where("category", "==", category))
+    const q = query(prodRef, where("category", "==", category));
 
-    getDocs(prodRef)
+    getDocs(q)
       .then((resp)=> {
         console.log(resp.docs[0].id);
         console.log(resp.docs[0].data());
@@ -28,7 +29,6 @@ const ItemListContainer = () => {
           })
         )
       })
-
   }, [category])
   
   // const filteredProducts = products.filter((products)=>products.category === category)
@@ -37,7 +37,7 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <ItemList productos={products} />
+      <ItemList productos={products}/>
     </>
   );
 };
