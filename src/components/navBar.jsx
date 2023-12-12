@@ -56,10 +56,10 @@ const NavBar = () => {
             Nuestros Productos
           </MenuButton>
           <MenuList bg='brand.400' color='brand.500' >
-            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'variedades de cafe'}`}> Variedades de Cafes </Link>  </MenuItem>
-            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'cafeteras'}`}> Cafeteras </Link> </MenuItem>
-            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'accesorios de barista'}`}> Accesorios de barista </Link> </MenuItem>
-            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'infusiones'}`}> Infusiones </Link> </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'Variedades de Cafe'}`}> Variedades de Cafes </Link>  </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'Cafeteras'}`}> Cafeteras </Link> </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'Accesorios de Barista'}`}> Accesorios de Barista </Link> </MenuItem>
+            <MenuItem bg='brand.300' color='brand.500' > <Link to={`/category/${'Infusiones'}`}> Infusiones </Link> </MenuItem>
           </MenuList>
         </Menu>
 

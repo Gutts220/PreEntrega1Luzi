@@ -9,26 +9,30 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   const category = useParams().category
-  console.log(category)
-
+ 
+  
   useEffect(() => {
 
     const prodRef = collection (dataBase, "productos");
-
-    // const q = category ? query(prodRef, where("category", "==", category)) : prodRef;
-
-    const q = query(prodRef, where("category", "==", category));
+    console.log(prodRef)
+    
+    const q = category ? query(prodRef, where('category', "==", category)) : prodRef;
+    console.log(q)
+    
+    
 
     getDocs(q)
       .then((resp)=> {
+        console.log(resp.docs)
         console.log(resp.docs[0].id);
         console.log(resp.docs[0].data());
         setProducts(
           resp.docs.map((doc)=>{
-            return{...doc.data(), id: doc.id}
+            return{ ...doc.data() , id: doc.id  };
           })
         )
       })
+      .catch((err) => { console.error('Error fetching data:', err) })
   }, [category])
   
   // const filteredProducts = products.filter((products)=>products.category === category)

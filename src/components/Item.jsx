@@ -2,29 +2,29 @@ import React from 'react'
 import { Card, CardHeader, CardBody, Heading, Text, Button, CardFooter, Flex, Center, Box } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-const Item = ({name, description, id, stock, category}) => {
+const Item = ({producto}) => {
   return (
     <> 
       <Center p='1rem'>
        <Flex >
         <Card bg='brand.300'>
           <CardHeader>
-                <Text>{category}</Text>
+                <Text>{producto.category}</Text>
                 <Box fontSize="30px">
                   <h1>
-                    {name}
+                    {producto.name}
                   </h1>
                 </Box> 
           </CardHeader>
 
           <CardBody>
-            <Text>{description}</Text>
-            <Text> Quedan {stock} unidades</Text>
+            <Text>{producto.description}</Text>
+            <Text> Quedan {producto.stock} unidades</Text>
           </CardBody>
 
           <CardFooter>
             <Button bg='brand.200'>
-              <Link to={`/item/${id}`}> 
+              <Link to={`/item/${producto.id}`}> 
                 Details 
               </Link>
             </Button>
