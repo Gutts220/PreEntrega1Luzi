@@ -7,6 +7,9 @@ import  About  from './components/About'
 import Cart from './components/Cart.jsx'
 import ItemDetailContainer from './components/ItemDetailContainer.jsx'
 import { CartProvider } from './context/CartContext.jsx'
+import CheckOut from './components/CheckOut.jsx'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const App = () => {
@@ -25,8 +28,10 @@ const App = () => {
            <Route exact path='/Cart' element={<Cart/>}/>
            <Route exact path='/category/:category' element={<ItemListContainer/>}/>
            <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
+           <Route exact path='/CheckOut' element={<CheckOut/>}/>
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </div>
     </CartProvider>
     </>

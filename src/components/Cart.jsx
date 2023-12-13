@@ -26,7 +26,7 @@ const Cart = () => {
             <>
                 <h2>Precio total: ${getTotalPrice()}</h2>
                 <button onClick={handleVaciar}>Vaciar</button>
-                <Link to="/checkout">Finalizar compra</Link>
+                <Link to="/CheckOut">Finalizar compra</Link>
             </> :
             <h2>El carrito está vacío :(</h2>
         }
